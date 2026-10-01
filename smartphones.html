@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="A practical guide to choosing the best budget smartphones, including performance, display, battery, cameras, software, gaming and buying tips.">
+
+<meta name="robots" content="index,follow">
+
+<meta name="theme-color" content="#11152a">
+
+<title>Best Budget Smartphones | Aqib Aura</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#0b0e1c;
+    color:#f5f7ff;
+    line-height:1.7;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(18px);
+    background:rgba(11,14,28,.82);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-.8px;
+}
+
+.logo span{
+    opacity:.55;
+}
+
+.nav-links{
+    display:flex;
+    gap:26px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#c9cce0;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.back-btn{
+    border:1px solid rgba(255,255,255,.13);
+    padding:9px 15px;
+    border-radius:999px;
+    background:rgba(255,255,255,.05);
+}
+
+/* HERO */
+
+.hero{
+    padding:85px 0 65px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(91,79,255,.18);
+    filter:blur(80px);
+    top:-180px;
+    right:-100px;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(0,211,255,.10);
+    filter:blur(80px);
+    bottom:-160px;
+    left:-100px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    padding:7px 13px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+    border-radius:999px;
+    color:#cfd3ff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    max-width:850px;
+    margin:20px 0 18px;
+    font-family:"Playfair Display",serif;
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.02;
+    letter-spacing:-2.5px;
+}
+
+.hero h1 em{
+    font-weight:600;
+}
+
+.hero p{
+    max-width:760px;
+    color:#b8bdd2;
+    font-size:17px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:28px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 19px;
+    border-radius:14px;
+    font-weight:800;
+    font-size:14px;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:#fff;
+    color:#101321;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.05);
+    color:#fff;
+}
+
+/* ARTICLE */
+
+.article{
+    padding:25px 0 80px;
+}
+
+.article-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 310px;
+    gap:35px;
+    align-items:start;
+}
+
+.article-main{
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:28px;
+    padding:clamp(22px,4vw,45px);
+}
+
+.article-main h2{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    margin:38px 0 12px;
+    line-height:1.15;
+}
+
+.article-main h2:first-child{
+    margin-top:0;
+}
+
+.article-main h3{
+    font-size:20px;
+    margin:25px 0 8px;
+}
+
+.article-main p{
+    color:#c0c4d6;
+    margin-bottom:16px;
+}
+
+.article-main ul{
+    padding-left:22px;
+    color:#c0c4d6;
+    margin-bottom:18px;
+}
+
+.article-main li{
+    margin-bottom:8px;
+}
+
+.highlight{
+    padding:20px;
+    margin:25px 0;
+    border-radius:18px;
+    background:rgba(105,95,255,.09);
+    border:1px solid rgba(120,110,255,.2);
+}
+
+.highlight strong{
+    color:#fff;
+}
+
+/* SIDE */
+
+.side{
+    position:sticky;
+    top:95px;
+}
+
+.side-card{
+    padding:24px;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+}
+
+.side-card h3{
+    margin-bottom:14px;
+}
+
+.side-card a{
+    display:block;
+    padding:9px 0;
+    color:#bfc4da;
+    font-size:14px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.side-card a:last-child{
+    border-bottom:0;
+}
+
+/* CHECKLIST */
+
+.checklist{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:18px;
+}
+
+.check{
+    padding:16px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.025);
+    border-radius:16px;
+}
+
+.check strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+.check span{
+    color:#9fa5bb;
+    font-size:13px;
+}
+
+/* PRODUCTS */
+
+.products{
+    padding:80px 0;
+    background:rgba(255,255,255,.018);
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+.section-heading{
+    max-width:720px;
+    margin-bottom:28px;
+}
+
+.section-heading .eyebrow{
+    margin-bottom:13px;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(32px,5vw,52px);
+    line-height:1.08;
+}
+
+.section-heading p{
+    margin-top:12px;
+    color:#aeb3c8;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.product{
+    padding:24px;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+    background:#101426;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    border-color:rgba(255,255,255,.16);
+}
+
+.product-icon{
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:18px;
+    background:linear-gradient(135deg,rgba(100,90,255,.15),rgba(0,210,255,.08));
+    margin-bottom:20px;
+    font-size:55px;
+}
+
+.product h3{
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.product p{
+    color:#aeb3c8;
+    font-size:14px;
+}
+
+.product-list{
+    list-style:none;
+    margin:18px 0;
+}
+
+.product-list li{
+    color:#c3c7d8;
+    font-size:13px;
+    padding:6px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.product-list li:last-child{
+    border-bottom:0;
+}
+
+.price{
+    font-size:14px;
+    color:#fff;
+    font-weight:800;
+    margin:14px 0;
+}
+
+.product-btn{
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:13px;
+    background:#fff;
+    color:#101321;
+    font-weight:800;
+    cursor:pointer;
+    text-align:center;
+    display:block;
+}
+
+.note{
+    margin-top:22px;
+    padding:18px;
+    border-radius:16px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
+    color:#aeb3c8;
+    font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:35px 0;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+footer p{
+    color:#858ba1;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .article-layout{
+        grid-template-columns:1fr;
+    }
+
+    .side{
+        position:static;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:60px 0 45px;
+    }
+
+    .hero h1{
+        font-size:43px;
+        letter-spacing:-1.5px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .article-main{
+        border-radius:20px;
+        padding:22px;
+    }
+
+    .checklist{
+        grid-template-columns:1fr;
+    }
+
+    .product{
+        padding:20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+            Aqib <span>Aura</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#guide">Guide</a>
+            <a href="#phones">Phones</a>
+            <a href="#checklist">Checklist</a>
+        </nav>
+
+        <a href="index.html" class="back-btn">
+            ← Home
+        </a>
+
+    </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+    <div class="container">
+
+        <span class="eyebrow">
+            Smartphone Buying Guide
+        </span>
+
+        <h1>
+            How to choose a smartphone without getting lost in the specs.
+        </h1>
+
+        <p>
+            Buying a smartphone is not only about RAM, megapixels or a high refresh rate.
+            This guide explains the features that actually matter so you can choose a phone
+            that fits your budget, everyday use and gaming needs.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#guide" class="btn btn-primary">
+                Read the guide
+            </a>
+
+            <a href="#phones" class="btn btn-secondary">
+                Explore phones
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="article" id="guide">
+
+<div class="container article-layout">
+
+<article class="article-main">
+
+<h2>What makes a good budget smartphone?</h2>
+
+<p>
+A budget smartphone should give you a balanced experience rather than focusing
+on one impressive specification. A phone with huge RAM but a weak processor,
+poor software support or a low-quality display may not be a good long-term choice.
+</p>
+
+<div class="highlight">
+<strong>Simple rule:</strong>
+Don't buy a phone because one specification looks impressive.
+Look at the complete package.
+</div>
+
+
+<h2>1. Performance and processor</h2>
+
+<p>
+The processor affects app performance, gaming, multitasking and how smoothly
+the phone feels during everyday use.
+</p>
+
+<p>
+When comparing phones, look at the actual chipset rather than judging the phone
+only by its RAM number. A well-balanced processor can provide a better experience
+than a phone with more RAM but weaker overall hardware.
+</p>
+
+<h3>What to check</h3>
+
+<ul>
+<li>Processor/chipset model</li>
+<li>CPU and GPU performance</li>
+<li>Storage technology</li>
+<li>RAM capacity</li>
+<li>Thermal performance during gaming</li>
+</ul>
+
+
+<h2>2. Display</h2>
+
+<p>
+The display is something you look at every day, so it deserves serious attention.
+Check the panel type, resolution, brightness and refresh rate.
+</p>
+
+<h3>For everyday use</h3>
+
+<p>
+A bright, sharp display with good viewing angles can make browsing, videos and
+social media much more enjoyable.
+</p>
+
+<h3>For gaming</h3>
+
+<p>
+A higher refresh rate can make supported games and animations feel smoother,
+but the processor also needs to be powerful enough to take advantage of it.
+</p>
+
+
+<h2>3. Battery and charging</h2>
+
+<p>
+Battery capacity is important, but battery life depends on much more than the
+number written on the box.
+</p>
+
+<ul>
+<li>Battery capacity</li>
+<li>Processor efficiency</li>
+<li>Display power consumption</li>
+<li>Charging speed</li>
+<li>Software optimization</li>
+</ul>
+
+<p>
+For heavy users, a large battery combined with an efficient chipset can be more
+useful than simply choosing the phone with the largest battery number.
+</p>
+
+
+<h2>4. Camera</h2>
+
+<p>
+More cameras do not automatically mean better photography.
+Look at the main camera sensor, image processing, stabilization and real-world
+photo quality.
+</p>
+
+<p>
+If photography matters to you, also check video recording capabilities,
+front-camera quality and low-light performance.
+</p>
+
+
+<h2>5. Software and updates</h2>
+
+<p>
+A smartphone is something you may use for several years, so software support
+should be part of your buying decision.
+</p>
+
+<p>
+Before buying, check the manufacturer's update policy and consider how long
+security updates and major Android updates are expected to continue.
+</p>
+
+
+<h2>6. Gaming performance</h2>
+
+<p>
+If you play games such as Free Fire, PUBG Mobile or other demanding titles,
+don't judge gaming performance by RAM alone.
+</p>
+
+<ul>
+<li>Check the chipset and GPU.</li>
+<li>Look for sustained performance, not only benchmark scores.</li>
+<li>Consider heating during longer gaming sessions.</li>
+<li>Check the display refresh rate.</li>
+<li>Consider storage speed and available storage.</li>
+</ul>
+
+
+<h2>7. Common mistakes to avoid</h2>
+
+<ul>
+<li>Buying only because the phone has more RAM.</li>
+<li>Choosing a phone based only on megapixels.</li>
+<li>Ignoring software update support.</li>
+<li>Ignoring display brightness.</li>
+<li>Ignoring heating and sustained gaming performance.</li>
+<li>Buying an old model without checking its current value.</li>
+</ul>
+
+
+<h2>Final buying checklist</h2>
+
+<div class="checklist" id="checklist">
+
+<div class="check">
+<strong>Processor</strong>
+<span>Check real performance and efficiency.</span>
+</div>
+
+<div class="check">
+<strong>Display</strong>
+<span>Check panel, brightness and refresh rate.</span>
+</div>
+
+<div class="check">
+<strong>Battery</strong>
+<span>Look at capacity, efficiency and charging.</span>
+</div>
+
+<div class="check">
+<strong>Camera</strong>
+<span>Look beyond megapixel numbers.</span>
+</div>
+
+<div class="check">
+<strong>Software</strong>
+<span>Check updates and long-term support.</span>
+</div>
+
+<div class="check">
+<strong>Gaming</strong>
+<span>Check chipset, GPU and thermal performance.</span>
+</div>
+
+</div>
+
+</article>
+
+
+<aside class="side">
+
+<div class="side-card">
+
+<h3>On this page</h3>
+
+<a href="#guide">Buying guide</a>
+<a href="#phones">Recommended phones</a>
+<a href="#checklist">Buying checklist</a>
+
+</div>
+
+</aside>
+
+</div>
+
+</section>
+
+
+<section class="products" id="phones">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Recommended Picks
+</span>
+
+<h2>
+Smartphones worth checking
+</h2>
+
+<p>
+We will add verified products, specifications, current prices and Amazon
+affiliate links here. Product information should be checked before publishing.
+</p>
+
+</div>
+
+
+<div class="product-grid">
+
+
+<div class="product">
+
+<div class="product-icon">
+📱
+</div>
+
+<h3>Budget Daily Driver</h3>
+
+<p>
+A balanced option for social media, browsing, videos and everyday tasks.
+</p>
+
+<ul class="product-list">
+<li>Processor: To verify</li>
+<li>Display: To verify</li>
+<li>Battery: To verify</li>
+<li>Camera: To verify</li>
+<li>Storage: To verify</li>
+</ul>
+
+<div class="price">
+Price: To verify
+</div>
+
+<a href="#" class="product-btn">
+Check Price
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-icon">
+🎮
+</div>
+
+<h3>Gaming Focus</h3>
+
+<p>
+A phone selected with gaming performance, display smoothness and thermals in mind.
+</p>
+
+<ul class="product-list">
+<li>Processor: To verify</li>
+<li>GPU: To verify</li>
+<li>Display: To verify</li>
+<li>Battery: To verify</li>
+<li>Storage: To verify</li>
+</ul>
+
+<div class="price">
+Price: To verify
+</div>
+
+<a href="#" class="product-btn">
+Check Price
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-icon">
+🔋
+</div>
+
+<h3>Battery Focus</h3>
+
+<p>
+A practical choice for users who want long battery life and everyday reliability.
+</p>
+
+<ul class="product-list">
+<li>Battery: To verify</li>
+<li>Charging: To verify</li>
+<li>Processor: To verify</li>
+<li>Display: To verify</li>
+<li>Software: To verify</li>
+</ul>
+
+<div class="price">
+Price: To verify
+</div>
+
+<a href="#" class="product-btn">
+Check Price
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="note">
+
+<strong>Affiliate disclosure:</strong>
+As an Amazon Associate I earn from qualifying purchases.
+
+<br><br>
+
+Prices, availability and specifications can change. Always check the product
+page before purchasing.
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container footer-inner">
+
+<p>
+© 2026 Aqib Aura. All rights reserved.
+</p>
+
+<p>
+Tech guides • Gadgets • Gaming • Buying Guides
+</p>
+
+</div>
+
+</footer>
+
+
+</body>
+  </html>
