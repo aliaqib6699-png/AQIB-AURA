@@ -2,23 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Aqib Aura smartphone buying guide covering budget phones, performance, displays, battery, cameras, gaming and smart buying tips.">
+<meta name="description" content="Aqib Aura smartphone buying guide covering budget phones, performance, displays, cameras, batteries, gaming and what to check before buying a smartphone.">
+
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#11152a">
+
+<meta name="theme-color" content="#080b18">
 
 <title>Smartphone Buying Guide | Aqib Aura</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -27,84 +36,2370 @@ html{
 
 body{
     font-family:"DM Sans",sans-serif;
-    background:#090c18;
+    background:#070914;
     color:#f7f8ff;
-    line-height:1.7;
     overflow-x:hidden;
-}
-
-body:before{
-    content:"";
-    position:fixed;
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    background:rgba(92,76,255,.16);
-    filter:blur(100px);
-    top:-160px;
-    right:-100px;
-    pointer-events:none;
-    z-index:-2;
-}
-
-body:after{
-    content:"";
-    position:fixed;
-    width:360px;
-    height:360px;
-    border-radius:50%;
-    background:rgba(0,210,255,.09);
-    filter:blur(100px);
-    bottom:-120px;
-    left:-100px;
-    pointer-events:none;
-    z-index:-2;
+    line-height:1.7;
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
+button{
+    font-family:inherit;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-5;
+
+    background:
+        radial-gradient(circle at 15% 15%, rgba(124,58,237,.18), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(37,99,235,.16), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(168,85,247,.10), transparent 35%);
+}
+
+.noise{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-4;
+    opacity:.035;
+
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+
+/* =========================
+   GLOW ORBS
+========================= */
+
+.orb{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(80px);
+    pointer-events:none;
+    z-index:-3;
+    opacity:.45;
+}
+
+.orb.one{
+    width:350px;
+    height:350px;
+    background:#6d28d9;
+    top:80px;
+    left:-160px;
+    animation:orbOne 12s ease-in-out infinite alternate;
+}
+
+.orb.two{
+    width:300px;
+    height:300px;
+    background:#2563eb;
+    top:420px;
+    right:-140px;
+    animation:orbTwo 15s ease-in-out infinite alternate;
+}
+
+.orb.three{
+    width:260px;
+    height:260px;
+    background:#9333ea;
+    bottom:0;
+    left:35%;
+    animation:orbThree 13s ease-in-out infinite alternate;
+}
+
+@keyframes orbOne{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(120px,100px) scale(1.25);
+    }
+}
+
+@keyframes orbTwo{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(-100px,80px) scale(1.3);
+    }
+}
+
+@keyframes orbThree{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(80px,-80px);
+    }
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
-    width:min(1120px,92%);
+    width:min(1160px,92%);
     margin:auto;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
     position:sticky;
     top:0;
-    z-index:100;
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    background:rgba(9,12,24,.78);
+    z-index:1000;
+
+    background:rgba(7,9,20,.68);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav{
-    min-height:72px;
+    min-height:76px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    gap:25px;
 }
 
 .logo{
-    font-size:24px;
+    font-size:23px;
     font-weight:800;
     letter-spacing:-.8px;
 }
 
 .logo span{
-    opacity:.5;
+    color:#a78bfa;
 }
 
 .nav-links{
     display:flex;
-    gap:26px;
     align-items:center;
+    gap:28px;
 }
 
 .nav-links a{
+    color:#b9bdd1;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.home-btn{
+    padding:10px 17px;
+    border-radius:999px;
+
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:
+        0 8px 30px rgba(124,58,237,.28);
+
+    transition:.3s ease;
+}
+
+.home-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 12px 40px rgba(124,58,237,.45);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    min-height:650px;
+
+    display:flex;
+    align-items:center;
+
+    padding:100px 0 90px;
+
+    overflow:hidden;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:heroIn 1s ease both;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:8px 14px;
+    border-radius:999px;
+
+    background:rgba(124,58,237,.12);
+    border:1px solid rgba(167,139,250,.25);
+
+    color:#c4b5fd;
+
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.4px;
+
+    margin-bottom:25px;
+
+    animation:pulseBadge 3s ease-in-out infinite;
+}
+
+.badge::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#a78bfa;
+    box-shadow:0 0 15px #a78bfa;
+}
+
+@keyframes pulseBadge{
+    0%,100%{
+        box-shadow:0 0 0 rgba(124,58,237,0);
+    }
+    50%{
+        box-shadow:0 0 30px rgba(124,58,237,.22);
+    }
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(48px,8vw,92px);
+    line-height:.98;
+    letter-spacing:-4px;
+
+    max-width:900px;
+}
+
+.gradient-text{
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd,
+        #60a5fa,
+        #ffffff
+    );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    animation:gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% center;
+    }
+    100%{
+        background-position:300% center;
+    }
+}
+
+.hero p{
+    max-width:720px;
+
+    color:#a8adc2;
+
+    font-size:18px;
+
+    margin-top:27px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+
+    margin-top:34px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:50px;
+    padding:0 22px;
+
+    border-radius:14px;
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:.35s ease;
+}
+
+.primary-btn{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+
+    box-shadow:
+        0 15px 40px rgba(76,29,149,.28);
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:
+        0 20px 50px rgba(124,58,237,.45);
+}
+
+.secondary-btn{
+    border:1px solid rgba(255,255,255,.13);
+    background:rgba(255,255,255,.045);
+    color:#dce0ef;
+}
+
+.secondary-btn:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.09);
+    border-color:rgba(167,139,250,.35);
+}
+
+
+/* =========================
+   FLOATING PHONE
+========================= */
+
+.hero-phone{
+    position:absolute;
+    width:210px;
+    height:390px;
+
+    right:6%;
+    top:50%;
+
+    transform:translateY(-50%) rotate(8deg);
+
+    border-radius:35px;
+
+    border:7px solid #171a2b;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191d34,
+            #0c0e1a
+        );
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.55),
+        0 0 80px rgba(124,58,237,.18);
+
+    animation:phoneFloat 5s ease-in-out infinite;
+}
+
+.hero-phone::before{
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+    height:18px;
+
+    background:#05060c;
+
+    border-radius:20px;
+
+    top:8px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.hero-phone::after{
+    content:"AURA";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#a78bfa;
+
+    font-size:23px;
+    font-weight:800;
+
+    letter-spacing:3px;
+}
+
+@keyframes phoneFloat{
+    0%,100%{
+        transform:translateY(-50%) rotate(8deg);
+    }
+    50%{
+        transform:translateY(calc(-50% - 18px)) rotate(5deg);
+    }
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:95px 0;
+}
+
+.section-heading{
+    margin-bottom:42px;
+}
+
+.eyebrow{
+    color:#a78bfa;
+
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(34px,5vw,55px);
+    line-height:1.08;
+
+    letter-spacing:-2px;
+}
+
+.section-heading p{
+    max-width:720px;
+
+    color:#969cb2;
+
+    margin-top:15px;
+}
+
+
+/* =========================
+   ARTICLE CARD
+========================= */
+
+.article-card{
+    position:relative;
+
+    padding:42px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.085),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.22);
+
+    overflow:hidden;
+}
+
+.article-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    right:-100px;
+    top:-130px;
+
+    border-radius:50%;
+
+    background:#7c3aed;
+
+    filter:blur(100px);
+
+    opacity:.20;
+}
+
+.article-card h3{
+    position:relative;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+}
+
+.article-card p{
+    position:relative;
+
+    color:#aeb3c7;
+
+    margin-bottom:18px;
+}
+
+.article-card strong{
+    color:#fff;
+}
+
+.article-card ul{
+    position:relative;
+
+    padding-left:22px;
+
+    color:#aeb3c7;
+}
+
+.article-card li{
+    margin:10px 0;
+}
+
+
+/* =========================
+   FEATURE GRID
+========================= */
+
+.feature-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:30px;
+}
+
+.feature{
+    padding:25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s ease;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.075);
+
+    border-color:rgba(167,139,250,.25);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+.feature-icon{
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+.feature h4{
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.feature p{
+    color:#969cb2;
+    font-size:14px;
+}
+
+
+/* =========================
+   PHONE CATEGORIES
+========================= */
+
+.category-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+}
+
+.category{
+    position:relative;
+
+    min-height:180px;
+
+    padding:24px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124,58,237,.13),
+            rgba(37,99,235,.055)
+        );
+
+    border:1px solid rgba(255,255,255,.09);
+
+    transition:.4s ease;
+}
+
+.category::before{
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    right:-45px;
+    top:-45px;
+
+    border-radius:50%;
+
+    background:#7c3aed;
+
+    filter:blur(55px);
+
+    opacity:.35;
+
+    transition:.4s ease;
+}
+
+.category:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(167,139,250,.30);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.28);
+}
+
+.category:hover::before{
+    transform:scale(1.4);
+    opacity:.55;
+}
+
+.category-number{
+    position:absolute;
+
+    top:20px;
+    right:22px;
+
+    color:#777d96;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.category-icon{
+    font-size:32px;
+    margin-bottom:14px;
+}
+
+.category h3{
+    font-size:20px;
+}
+
+.category p{
+    color:#9298ae;
+    font-size:13px;
+    margin-top:4px;
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px;
+}
+
+.check{
+    display:flex;
+    gap:17px;
+
+    padding:22px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s ease;
+}
+
+.check:hover{
+    transform:translateX(6px);
+
+    border-color:rgba(96,165,250,.25);
+
+    background:rgba(255,255,255,.065);
+}
+
+.check-number{
+    flex:none;
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(124,58,237,.35),
+        rgba(37,99,235,.20)
+    );
+
+    color:#c4b5fd;
+
+    font-weight:800;
+}
+
+.check h4{
+    margin-bottom:3px;
+}
+
+.check p{
+    color:#9298ae;
+    font-size:14px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.product{
+    position:relative;
+
+    padding:25px;
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.09);
+
+    overflow:hidden;
+
+    transition:.4s ease;
+}
+
+.product:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(124,58,237,.35);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.30);
+}
+
+.product-image{
+    height:210px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(124,58,237,.20),
+            rgba(37,99,235,.04) 60%,
+            transparent 70%
+        );
+
+    margin-bottom:23px;
+}
+
+.fake-phone{
+    width:92px;
+    height:165px;
+
+    border-radius:20px;
+
+    border:5px solid #272b40;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171b30,
+            #090b14
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45);
+
+    position:relative;
+
+    animation:productFloat 4s ease-in-out infinite;
+}
+
+.fake-phone::before{
+    content:"";
+
+    position:absolute;
+
+    width:35px;
+    height:7px;
+
+    border-radius:10px;
+
+    background:#05060a;
+
+    top:6px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+@keyframes productFloat{
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+    50%{
+        transform:translateY(-8px) rotate(2deg);
+    }
+}
+
+.product-tag{
+    display:inline-block;
+
+    padding:5px 9px;
+
+    border-radius:999px;
+
+    background:rgba(124,58,237,.14);
+
+    color:#c4b5fd;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:10px;
+}
+
+.product h3{
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.product p{
+    color:#9298ae;
+    font-size:14px;
+}
+
+.specs{
+    margin:20px 0;
+
+    display:grid;
+
+    gap:9px;
+}
+
+.spec{
+    display:flex;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    font-size:13px;
+}
+
+.spec span:first-child{
+    color:#777e97;
+}
+
+.spec span:last-child{
+    color:#e1e4ef;
+    text-align:right;
+}
+
+.product-btn{
+    width:100%;
+
+    min-height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    font-size:13px;
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.product-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(124,58,237,.35);
+}
+
+
+/* =========================
+   TIPS
+========================= */
+
+.tips{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
+}
+
+.tip{
+    padding:27px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    transition:.35s ease;
+}
+
+.tip:hover{
+    transform:translateY(-6px);
+
+    background:rgba(255,255,255,.065);
+}
+
+.tip h3{
+    margin-bottom:8px;
+}
+
+.tip p{
+    color:#969cb2;
+    font-size:14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    position:relative;
+
+    text-align:center;
+
+    padding:70px 30px;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124,58,237,.20),
+            rgba(37,99,235,.12)
+        );
+
+    border:1px solid rgba(167,139,250,.18);
+}
+
+.cta::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:#7c3aed;
+
+    filter:blur(100px);
+
+    opacity:.16;
+
+    left:50%;
+    top:-200px;
+
+    transform:translateX(-50%);
+}
+
+.cta h2{
+    position:relative;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(34px,5vw,58px);
+
+    line-height:1.05;
+}
+
+.cta p{
+    position:relative;
+
+    max-width:650px;
+
+    margin:17px auto 28px;
+
+    color:#a4a9bd;
+}
+
+
+/* =========================
+   DISCLOSURE
+========================= */
+
+.disclosure{
+    margin-top:25px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    color:#777e96;
+
+    font-size:12px;
+
+    text-align:center;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:45px 0 30px;
+
+    border-top:1px solid rgba(255,255,255,.07);
+
+    color:#777d94;
+
+    font-size:13px;
+}
+
+.footer-inner{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer-logo{
+    color:#fff;
+    font-weight:800;
+}
+
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================
+   SCROLL TOP
+========================= */
+
+.top-btn{
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    background:rgba(15,18,35,.75);
+
+    backdrop-filter:blur(12px);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:.3s ease;
+
+    z-index:999;
+}
+
+.top-btn.visible{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.top-btn:hover{
+    transform:translateY(-4px);
+
+    background:#7c3aed;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    .hero-phone{
+        opacity:.20;
+        right:-80px;
+    }
+
+    .category-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .feature-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:700px){
+
+    .nav{
+        min-height:68px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:75px 0 70px;
+    }
+
+    .hero h1{
+        font-size:52px;
+        letter-spacing:-2.5px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-phone{
+        display:none;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+    .article-card{
+        padding:25px;
+        border-radius:22px;
+    }
+
+    .article-card h3{
+        font-size:27px;
+    }
+
+    .feature-grid,
+    .category-grid,
+    .products,
+    .checklist,
+    .tips{
+        grid-template-columns:1fr;
+    }
+
+    .category{
+        min-height:150px;
+    }
+
+    .products{
+        gap:16px;
+    }
+
+    .cta{
+        padding:55px 22px;
+        border-radius:25px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+}
+
+
+@media(max-width:430px){
+
+    .container{
+        width:90%;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="noise"></div>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="container nav">
+
+<a href="index.html" class="logo">
+Aqib <span>Aura</span>
+</a>
+
+<nav class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="#guide">Guide</a>
+
+<a href="#categories">Categories</a>
+
+<a href="#phones">Phones</a>
+
+<a href="#checklist">Checklist</a>
+
+</nav>
+
+<a href="index.html" class="home-btn">
+← Home
+</a>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="badge">
+SMARTPHONE BUYING GUIDE
+</div>
+
+<h1>
+Choose your next
+<span class="gradient-text">
+smartphone
+</span>
+with confidence.
+</h1>
+
+<p>
+Buying a smartphone isn't just about megapixels,
+RAM or processor names. This guide breaks down the
+important things you should actually check before
+spending your money.
+</p>
+
+<div class="hero-actions">
+
+<a href="#guide" class="primary-btn">
+Start the Guide →
+</a>
+
+<a href="#phones" class="secondary-btn">
+Explore Phone Picks
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-phone"></div>
+
+</section>
+
+
+
+<!-- =========================
+     GUIDE
+========================= -->
+
+<section id="guide">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+The basics
+</div>
+
+<h2>
+What actually matters when buying a phone?
+</h2>
+
+<p>
+A good smartphone is about balance. Instead of chasing
+one impressive specification, look at the complete package.
+</p>
+
+</div>
+
+
+<div class="article-card reveal">
+
+<h3>
+Don't buy a phone just because the specifications look impressive.
+</h3>
+
+<p>
+A phone can have a large amount of RAM, a high megapixel
+camera and a fast charging number, but that does not
+automatically make it the right phone for you.
+</p>
+
+<p>
+Before buying, think about how you actually use your phone.
+If you mainly use social media, YouTube and everyday apps,
+you may not need an expensive flagship.
+</p>
+
+<p>
+If you play demanding games, the processor, cooling,
+display refresh rate and sustained performance become
+much more important.
+</p>
+
+<ul>
+
+<li>
+<strong>Performance:</strong>
+Look at the processor and real-world performance.
+</li>
+
+<li>
+<strong>Display:</strong>
+Check brightness, refresh rate, resolution and panel quality.
+</li>
+
+<li>
+<strong>Battery:</strong>
+Capacity matters, but efficiency and charging also matter.
+</li>
+
+<li>
+<strong>Camera:</strong>
+Don't judge camera quality only by megapixels.
+</li>
+
+<li>
+<strong>Software:</strong>
+Check the software experience and expected update support.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="feature-grid">
+
+<div class="feature reveal">
+
+<div class="feature-icon">⚡</div>
+
+<h4>Performance</h4>
+
+<p>
+Choose a processor suitable for your daily workload and gaming needs.
+</p>
+
+</div>
+
+
+<div class="feature reveal">
+
+<div class="feature-icon">🖥️</div>
+
+<h4>Display</h4>
+
+<p>
+A bright, smooth and good-quality display can improve everyday use.
+</p>
+
+</div>
+
+
+<div class="feature reveal">
+
+<div class="feature-icon">🔋</div>
+
+<h4>Battery</h4>
+
+<p>
+Look beyond battery capacity and consider efficiency and charging.
+</p>
+
+</div>
+
+
+<div class="feature reveal">
+
+<div class="feature-icon">📸</div>
+
+<h4>Camera</h4>
+
+<p>
+Sensor quality, processing and stabilization matter more than megapixels alone.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section id="categories">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Phone categories
+</div>
+
+<h2>
+Find the right price range.
+</h2>
+
+<p>
+Different budgets have different priorities.
+Start with the category that matches your budget.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+<div class="category reveal">
+
+<div class="category-number">
+01
+</div>
+
+<div class="category-icon">
+💰
+</div>
+
+<h3>
+Budget
+</h3>
+
+<p>
+Everyday phones with value-focused hardware.
+</p>
+
+</div>
+
+
+<div class="category reveal">
+
+<div class="category-number">
+02
+</div>
+
+<div class="category-icon">
+⚖️
+</div>
+
+<h3>
+Mid-Range
+</h3>
+
+<p>
+Balanced performance, cameras and displays.
+</p>
+
+</div>
+
+
+<div class="category reveal">
+
+<div class="category-number">
+03
+</div>
+
+<div class="category-icon">
+🚀
+</div>
+
+<h3>
+Upper Mid-Range
+</h3>
+
+<p>
+Near-flagship performance without flagship pricing.
+</p>
+
+</div>
+
+
+<div class="category reveal">
+
+<div class="category-number">
+04
+</div>
+
+<div class="category-icon">
+👑
+</div>
+
+<h3>
+Flagship
+</h3>
+
+<p>
+Premium performance, cameras and features.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CHECKLIST
+========================= -->
+
+<section id="checklist">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Before you buy
+</div>
+
+<h2>
+Your smartphone checklist.
+</h2>
+
+<p>
+Use these questions before clicking the buy button.
+</p>
+
+</div>
+
+
+<div class="checklist">
+
+
+<div class="check reveal">
+
+<div class="check-number">
+01
+</div>
+
+<div>
+
+<h4>
+Is the processor powerful enough?
+</h4>
+
+<p>
+Consider everyday performance, gaming and long-term usage.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="check reveal">
+
+<div class="check-number">
+02
+</div>
+
+<div>
+
+<h4>
+Is the display good enough?
+</h4>
+
+<p>
+Look at brightness, refresh rate, panel type and resolution.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="check reveal">
+
+<div class="check-number">
+03
+</div>
+
+<div>
+
+<h4>
+Will the battery last?
+</h4>
+
+<p>
+Consider battery size, chipset efficiency and charging speed.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="check reveal">
+
+<div class="check-number">
+04
+</div>
+
+<div>
+
+<h4>
+Does the camera match your needs?
+</h4>
+
+<p>
+Check the main camera, ultrawide, stabilization and video features.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="check reveal">
+
+<div class="check-number">
+05
+</div>
+
+<div>
+
+<h4>
+How good is the software?
+</h4>
+
+<p>
+Check the user interface, update policy and included features.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="check reveal">
+
+<div class="check-number">
+06
+</div>
+
+<div>
+
+<h4>
+Is there a better option at the same price?
+</h4>
+
+<p>
+Always compare at least a few alternatives before buying.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PHONE PICKS
+========================= -->
+
+<section id="phones">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Recommended picks
+</div>
+
+<h2>
+Phones worth comparing.
+</h2>
+
+<p>
+Our product section will be updated with specific phones,
+verified specifications, prices and affiliate links.
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+
+<article class="product reveal">
+
+<div class="product-image">
+
+<div class="fake-phone"></div>
+
+</div>
+
+<span class="product-tag">
+Budget
+</span>
+
+<h3>
+Budget Daily Driver
+</h3>
+
+<p>
+A placeholder for a value-focused smartphone.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+
+<span>Performance</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Display</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Battery</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Camera</span>
+
+<span>To verify</span>
+
+</div>
+
+</div>
+
+<a href="#" class="product-btn">
+Check Price →
+</a>
+
+</article>
+
+
+
+<!-- PRODUCT 2 -->
+
+<article class="product reveal">
+
+<div class="product-image">
+
+<div class="fake-phone"></div>
+
+</div>
+
+<span class="product-tag">
+Performance
+</span>
+
+<h3>
+Gaming Focus
+</h3>
+
+<p>
+A placeholder for a performance-focused smartphone.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+
+<span>Processor</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Display</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Cooling</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Battery</span>
+
+<span>To verify</span>
+
+</div>
+
+</div>
+
+<a href="#" class="product-btn">
+Check Price →
+</a>
+
+</article>
+
+
+
+<!-- PRODUCT 3 -->
+
+<article class="product reveal">
+
+<div class="product-image">
+
+<div class="fake-phone"></div>
+
+</div>
+
+<span class="product-tag">
+Battery
+</span>
+
+<h3>
+Battery Focus
+</h3>
+
+<p>
+A placeholder for a long-lasting everyday smartphone.
+</p>
+
+<div class="specs">
+
+<div class="spec">
+
+<span>Battery</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Charging</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Display</span>
+
+<span>To verify</span>
+
+</div>
+
+<div class="spec">
+
+<span>Software</span>
+
+<span>To verify</span>
+
+</div>
+
+</div>
+
+<a href="#" class="product-btn">
+Check Price →
+</a>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     BUYING TIPS
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Smart buying
+</div>
+
+<h2>
+Avoid these common mistakes.
+</h2>
+
+</div>
+
+
+<div class="tips">
+
+
+<div class="tip reveal">
+
+<h3>
+❌ Don't buy based only on RAM.
+</h3>
+
+<p>
+RAM is only one part of the experience.
+Processor, software optimization and storage speed also matter.
+</p>
+
+</div>
+
+
+<div class="tip reveal">
+
+<h3>
+❌ Don't chase megapixels.
+</h3>
+
+<p>
+A higher megapixel number does not automatically mean better photos.
+</p>
+
+</div>
+
+
+<div class="tip reveal">
+
+<h3>
+❌ Don't ignore software.
+</h3>
+
+<p>
+A phone's software experience can affect how enjoyable it remains over time.
+</p>
+
+</div>
+
+
+<div class="tip reveal">
+
+<h3>
+❌ Don't skip comparisons.
+</h3>
+
+<p>
+A phone that looks attractive on paper may have a better alternative at a similar price.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="cta reveal">
+
+<h2>
+Ready to choose smarter?
+</h2>
+
+<p>
+Keep this guide bookmarked and compare the actual phones
+before making your final decision.
+</p>
+
+<a href="#phones" class="primary-btn">
+Explore Phone Picks →
+</a>
+
+</div>
+
+
+<div class="disclosure">
+
+<strong>Affiliate Disclosure:</strong>
+As an Amazon Associate I earn from qualifying purchases.
+Some links on this website may be affiliate links.
+This does not increase the price you pay.
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+<span class="footer-logo">
+Aqib Aura
+</span>
+
+<br>
+
+Technology • Gadgets • Gaming • Buying Guides
+
+</div>
+
+<div>
+© 2026 Aqib Aura. All rights reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================
+     SCROLL TOP
+========================= -->
+
+<button class="top-btn" id="topBtn" aria-label="Back to top">
+↑
+</button>
+
+
+
+<script>
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(
+(entries) => {
+
+entries.forEach((entry) => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+revealObserver.unobserve(entry.target);
+
+}
+
+});
+
+},
+{
+threshold:0.12
+}
+);
+
+revealElements.forEach((element) => {
+
+revealObserver.observe(element);
+
+});
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+if(window.scrollY > 500){
+
+topBtn.classList.add("visible");
+
+}else{
+
+topBtn.classList.remove("visible");
+
+}
+
+});
+
+topBtn.addEventListener("click", () => {
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+});
+
+
+/* =========================
+   STAGGER ANIMATIONS
+========================= */
+
+document
+.querySelectorAll(".feature, .category, .check, .product, .tip")
+.forEach((element,index) => {
+
+element.style.transitionDelay =
+(index % 4) * 80 + "ms";
+
+});
+
+</script>
+
+</body>
+</html>
