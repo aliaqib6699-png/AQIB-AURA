@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Buy Smartphones by Budget & Needs | Aqib Tech</title>
+  <meta name="description" content="Find the right smartphone for your budget and needs. Explore budget, mid-range, upper mid-range and flagship phones with Aqib Tech.">
+
+  <link rel="icon" href="aqib-tech-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #697386;
+      --green: #18794e;
+      --green-light: #eaf7ef;
+      --line: #e8ebef;
+      --surface: #ffffff;
+      --background: #f8faf9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--background);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 91%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .logo img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-cta {
+      padding: 10px 17px;
+      border-radius: 10px;
+      background: var(--green);
+      color: white !important;
+    }
+
+    .hero {
+      padding: 76px 0 58px;
+      background:
+        radial-gradient(ellipse at 85% 15%, #dff4e6 0, transparent 34%),
+        linear-gradient(135deg, #fff 0%, #f6fbf7 100%);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      background: var(--green-light);
+      border: 1px solid #d5eddd;
+      padding: 7px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin-top: 22px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5.5vw, 63px);
+      letter-spacing: -1.8px;
+      max-width: 680px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      margin-top: 20px;
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 16px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 19px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--green);
+      box-shadow: 0 7px 18px #18794e25;
+    }
+
+    .button-primary:hover {
+      background: #12643f;
+      box-shadow: 0 10px 22px #18794e30;
+    }
+
+    .button-secondary {
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .hero-art {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .orbit {
+      width: 245px;
+      height: 245px;
+      border-radius: 50%;
+      border: 1px solid #c9e7d3;
+      background: linear-gradient(145deg, #eaf8ef, #fff);
+      display: grid;
+      place-items: center;
+      animation: float 5s ease-in-out infinite;
+      position: relative;
+    }
+
+    .phone-shape {
+      width: 112px;
+      height: 190px;
+      border-radius: 25px;
+      border: 6px solid #23362e;
+      background: linear-gradient(145deg, #d8f3df, #fff);
+      box-shadow: 0 22px 45px #193e2920;
+      display: grid;
+      place-items: center;
+      font-size: 43px;
+      transform: rotate(-8deg);
+    }
+
+    .bubble {
+      position: absolute;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px #182b2010;
+      border-radius: 13px;
+      padding: 10px 13px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .bubble-one {
+      top: 24px;
+      right: -2px;
+    }
+
+    .bubble-two {
+      bottom: 23px;
+      left: -6px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .section {
+      padding: 65px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 27px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(27px, 3.5vw, 38px);
+      letter-spacing: -.7px;
+    }
+
+    .section-heading p {
+      margin-top: 9px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .count {
+      white-space: nowrap;
+      color: var(--green);
+      background: var(--green-light);
+      padding: 8px 12px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 19px;
+    }
+
+    .category-card {
+      min-height: 230px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      animation: appear .6s both;
+    }
+
+    .category-card:nth-child(2) { animation-delay: .08s; }
+    .category-card:nth-child(3) { animation-delay: .16s; }
+    .category-card:nth-child(4) { animation-delay: .24s; }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 42px #1b332010;
+      border-color: #b9dfc6;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      border-radius: 15px;
+      font-size: 25px;
+    }
+
+    .card-number {
+      font-size: 12px;
+      color: #98a1ad;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .category-card h3 {
+      margin-top: 22px;
+      font-size: 22px;
+      letter-spacing: -.4px;
+    }
+
+    .category-card p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 400px;
+    }
+
+    .card-bottom {
+      margin-top: auto;
+      padding-top: 21px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .arrow {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-light);
+      transition: transform .2s;
+    }
+
+    .category-card:hover .arrow {
+      transform: translateX(3px);
+    }
+
+    .tips {
+      background: #eef7f0;
+      border-top: 1px solid #dfefe3;
+      border-bottom: 1px solid #dfefe3;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tip {
+      padding: 21px;
+      border: 1px solid #dcebe0;
+      background: #ffffffc9;
+      border-radius: 15px;
+    }
+
+    .tip-icon {
+      font-size: 23px;
+    }
+
+    .tip h3 {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+
+    .tip p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .guide-cta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: white;
+    }
+
+    .guide-cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+    }
+
+    .guide-cta p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      background: white;
+      border-top: 1px solid var(--line);
+      padding: 27px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    footer p, footer a {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer a:hover {
+      color: var(--green);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 12px;
+      }
+
+      .nav-links .nav-cta {
+        padding: 8px 10px;
+      }
+
+      .hero {
+        padding: 48px 0 38px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .hero-art {
+        min-height: 235px;
+      }
+
+      .orbit {
+        width: 200px;
+        height: 200px;
+      }
+
+      .phone-shape {
+        width: 91px;
+        height: 155px;
+        font-size: 35px;
+      }
+
+      .section {
+        padding: 45px 0;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-cta {
+        align-items: start;
+        flex-direction: column;
+        padding: 23px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .logo img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a:first-child {
+        display: none;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: 215px;
+        padding: 22px;
+      }
+
+      .count {
+        white-space: normal;
+      }
+
+      .footer-inner {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <img src="aqib-tech-logo.png" alt="Aqib Tech Logo">
+        <span style="color:var(--ink)">Aqib <span>Tech</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="smartphones.html">Phone Guides</a>
+        <a href="#categories" class="nav-cta">Explore Phones ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">✦ Your smarter buying journey</span>
+          <h1>Buy Better.<br><span>Choose Smarter.</span></h1>
+          <p>
+            Every budget is different. Find the smartphone category that fits
+            your needs, compare your options, and make a more informed choice
+            with Aqib Tech.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#categories">
+              Explore Categories <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-secondary" href="smartphones.html">
+              Read Phone Guides
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit">
+            <div class="phone-shape">✦</div>
+            <div class="bubble bubble-one">✓ Compare smarter</div>
+            <div class="bubble bubble-two">Your budget, your choice</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Find Your Phone Category</h2>
+            <p>
+              Start with your budget. Choose a category below to see phones
+              selected for that price segment.
+            </p>
+          </div>
+          <span class="count">04 main categories</span>
+        </div>
+
+        <div class="category-grid">
+          <a class="category-card" href="budget-phones.html">
+            <div class="card-top">
+              <div class="card-icon">💰</div>
+              <span class="card-number">01 / 04</span>
+            </div>
+            <h3>Budget Phones</h3>
+            <p>
+              Practical choices for everyday use, study, social media and
+              value-conscious buyers.
+            </p>
+            <div class="card-bottom">
+              <span>Explore budget phones</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="mid-range-phones.html">
+            <div class="card-top">
+              <div class="card-icon">📱</div>
+              <span class="card-number">02 / 04</span>
+            </div>
+            <h3>Mid-Range Phones</h3>
+            <p>
+              Look for a balanced combination of performance, display,
+              camera and battery life.
+            </p>
+            <div class="card-bottom">
+              <span>Explore mid-range phones</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="upper-mid-range-phones.html">
+            <div class="card-top">
+              <div class="card-icon">⚡</div>
+              <span class="card-number">03 / 04</span>
+            </div>
+            <h3>Upper Mid-Range</h3>
+            <p>
+              Discover more powerful options for demanding apps, photography
+              and smoother everyday performance.
+            </p>
+            <div class="card-bottom">
+              <span>Explore upper mid-range</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="flagship-phones.html">
+            <div class="card-top">
+              <div class="card-icon">💎</div>
+              <span class="card-number">04 / 04</span>
+            </div>
+            <h3>Flagship Phones</h3>
+            <p>
+              Explore premium devices with advanced cameras, powerful
+              hardware and high-end features.
+            </p>
+            <div class="card-bottom">
+              <span>Explore flagship phones</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tips">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Shop According to Your Needs</h2>
+            <p>
+              Price is only one part of the decision. Think about how you
+              will actually use your phone.
+            </p>
+          </div>
+        </div>
+
+        <div class="tips-grid">
+          <article class="tip">
+            <div class="tip-icon">🎮</div>
+            <h3>Gaming & Performance</h3>
+            <p>
+              Compare chipset performance, sustained gaming, heat management
+              and display refresh rate.
+            </p>
+          </article>
+
+          <article class="tip">
+            <div class="tip-icon">📸</div>
+            <h3>Camera & Content</h3>
+            <p>
+              Consider real-world photo quality, video recording,
+              stabilisation and low-light results.
+            </p>
+          </article>
+
+          <article class="tip">
+            <div class="tip-icon">🔋</div>
+            <h3>Battery & Daily Use</h3>
+            <p>
+              Check battery endurance, charging speed, software support
+              and your everyday requirements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="guide-cta">
+          <div>
+            <h2>Want to understand specs first?</h2>
+            <p>
+              Learn what processor, RAM, storage, display and camera
+              specifications actually mean before buying.
+            </p>
+          </div>
+          <a href="smartphones.html" class="button button-primary">
+            Read Smartphone Guides →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aqib Tech. Make informed tech choices.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="smartphones.html">Smartphone Guides</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
